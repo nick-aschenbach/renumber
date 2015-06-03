@@ -11,7 +11,7 @@ describe Renumber do
 
     it 'returns a sorted list of files and ignores directories' do
       expect(File).to receive(:directory?).with(path).and_return(true)
-      expect(Dir).to receive(:entries).with(path).and_return(file_list)
+      expect(Dir).to receive(:entries).with('.').and_return(file_list)
       expect(File).to receive(:file?).and_return(*which_are_files)
 
       expect(subject.sorted_files(path)).to eq(expected_files)

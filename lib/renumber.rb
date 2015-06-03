@@ -6,7 +6,7 @@ module Renumber
 
     Dir.chdir(path)
 
-    file_entries_from_path(path).sort
+    file_entries_from_path('.').sort
   end
 
   def change_files(path, prefix=nil, suffix=nil)

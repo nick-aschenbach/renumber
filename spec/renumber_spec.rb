@@ -17,6 +17,13 @@ describe Renumber do
       expect(subject.sorted_files(path)).to eq(expected_files)
     end
 
+    it 'changes to the specified directory' do
+      allow(File).to receive(:rename)
+      expect(Dir).to receive(:chdir).with(path)
+
+      subject.sorted_files(path)
+    end
+
     context 'when the path is not a directory' do
       let(:path) { 'foobar.txt' }
 
@@ -44,13 +51,6 @@ describe Renumber do
     it 'returns early when no files are returned' do
       allow(subject).to receive(:sorted_files).with(path).and_return([])
       expect(Math).to_not receive(:log10)
-
-      subject.change_files(path)
-    end
-
-    it 'changes to the specified directory' do
-      allow(File).to receive(:rename)
-      expect(Dir).to receive(:chdir).with(path)
 
       subject.change_files(path)
     end

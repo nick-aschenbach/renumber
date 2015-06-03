@@ -4,14 +4,14 @@ module Renumber
   def sorted_files(path)
     raise ArgumentError, 'path must be a directory' unless File.directory?(path)
 
+    Dir.chdir(path)
+
     file_entries_from_path(path).sort
   end
 
   def change_files(path, prefix=nil, suffix=nil)
     sorted_files = sorted_files(path)
     return if sorted_files.length == 0
-
-    Dir.chdir(path)
 
     zeros_length = Math.log10(sorted_files.length).ceil
 

@@ -48,6 +48,13 @@ describe Renumber do
       subject.change_files(path)
     end
 
+    it 'changes to the specified directory' do
+      allow(File).to receive(:rename)
+      expect(Dir).to receive(:chdir).with(path)
+
+      subject.change_files(path)
+    end
+
     describe 'prefixes and suffixes' do
       let(:sorted_files) { ['01.txt', 'foo.txt'] }
 

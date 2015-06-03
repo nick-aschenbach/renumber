@@ -11,6 +11,8 @@ module Renumber
     sorted_files = sorted_files(path)
     return if sorted_files.length == 0
 
+    Dir.chdir(path)
+
     zeros_length = Math.log10(sorted_files.length).ceil
 
     sorted_files.each_with_index do |file, index|

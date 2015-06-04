@@ -1,8 +1,8 @@
 # Renumber
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/renumber`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This simple utility allows renaming non-sequential files to be sequentially numbered.
+For example given input files: input00.txt, input03.txt, input99.txt it changes their
+name to: f0.text, f1.text, f2.text
 
 ## Installation
 
@@ -22,14 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-```ruby
-require 'renumber'
-include Renumber
+Given
 
-sorted_files '.' # -> 0, 3, 4
-
-change_files '.', 'prefix', '.txt' # -> prefix0.txt, prefix1.txt, prefix2.txt
-```
+$ renumber directory_name [prefix] [suffix]
 
 ## Contributing
 

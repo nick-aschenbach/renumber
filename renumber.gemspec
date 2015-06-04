@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['nick.aschenbach@gmail.com']
 
   spec.summary       = %q{Simple file utility to renumber sequential files in a directory}
-  spec.description   = %q{Allows renumbering non-sequential files sequentially. For example f00.txt, f03.txt, f99.txt -> f0.txt, f1.txt, f2.txt}
+  spec.description   = %q{Allows renumbering non-sequential files sequentially. For example f00.txt, f03.txt, f99.txt -> f0.txt, f1.txt, f2.txt. Usage: renumber directory_name [prefix] [suffix]}
   spec.homepage      = 'https://github.com/nick-aschenbach/renumber'
   spec.license       = 'MIT'
 

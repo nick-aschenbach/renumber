@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'renumber'
+
+include Renumber
+
+puts 'Usage: renumber directory_name [prefix] [suffix]' unless ARGV[0]
+
+change_files ARGV[0], ARGV[1], ARGV[2]

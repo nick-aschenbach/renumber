@@ -1,30 +1,21 @@
 # Renumber
 
 This simple utility allows renaming non-sequential files to be sequentially numbered.
-For example given input files: input00.txt, input03.txt, input99.txt it changes their
-name to: f0.text, f1.text, f2.text
+
+For example given input files: `input00.txt`, `input03.txt`, `input99.txt` it can change their
+names to: `f0.text`, `f1.text`, `f2.text`
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'renumber'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Add the command line utility using Ruby's gem command:
 
     $ gem install renumber
 
 ## Usage
 
-Given
+From the command line specify a directory name and optional prefix and suffix:
 
-$ renumber directory_name [prefix] [suffix]
+    $ renumber directory_name [prefix] [suffix]
 
 ## Contributing
 

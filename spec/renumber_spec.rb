@@ -34,7 +34,7 @@ describe Renumber do
       it 'raises an error' do
         expect {
           subject.sorted_files(path)
-        }.to raise_exception(ArgumentError, 'path must be a directory')
+        }.to raise_exception(ArgumentError, 'Path must be a directory')
       end
     end
   end

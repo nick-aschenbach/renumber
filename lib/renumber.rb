@@ -2,7 +2,7 @@ require 'renumber/version'
 
 module Renumber
   def sorted_files(path)
-    raise ArgumentError, 'path must be a directory' unless File.directory?(path)
+    raise ArgumentError, 'Path must be a directory' unless File.directory?(path)
 
     Dir.chdir(path)
 

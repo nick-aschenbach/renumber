@@ -1,12 +1,14 @@
 #!/usr/bin/env ruby
 
-puts 'Usage: renumber directory_name [prefix] [suffix]' and exit unless ARGV[0]
-
 require 'renumber'
 include Renumber
 
-begin
-  change_files ARGV[0], ARGV[1], ARGV[2]
-rescue ArgumentError => e
-  puts e.message
+if ARGV[0].nil?
+  puts 'Usage: renumber directory_name [prefix] [suffix]'
+else
+  begin
+    change_files ARGV[0], ARGV[1], ARGV[2]
+  rescue ArgumentError => e
+    puts e.message
+  end
 end

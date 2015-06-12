@@ -4,6 +4,10 @@ require 'renumber'
 
 include Renumber
 
-puts 'Usage: renumber directory_name [prefix] [suffix]' unless ARGV[0]
+puts 'Usage: renumber directory_name [prefix] [suffix]' and return unless ARGV[0]
 
-change_files ARGV[0], ARGV[1], ARGV[2]
+begin
+  change_files ARGV[0], ARGV[1], ARGV[2]
+rescue ArgumentError => e
+  puts e.message
+end
